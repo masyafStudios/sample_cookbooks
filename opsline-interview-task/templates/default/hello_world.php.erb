@@ -1,0 +1,10 @@
+<?php
+
+# mysql_connect is removed in PHP7. Remember to use PDO::MYSQL in the future!
+$db = mysql_connect("localhost", <%= @username %>, <%= @password %>);
+
+$connection_verification = mysql_query("SHOW VARIABLES LIKE %version%",$db);
+
+echo "Hello World! Doing a print_r to connect to the local database.";
+print_r($connection_verification);
+?>
